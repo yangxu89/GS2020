@@ -18,10 +18,10 @@ snp <- read.csv(file = "Input/RIL-Genotypes.csv", header = T)
 exp <- read.csv(file = "Input/RIL-Expressions.csv", header = T)
 met <- read.csv(file = "Input/RIL-Metabolites.csv", header = T)
 n <- nrow(phe)
-gn <- (phe$gn97x + phe$gn98x + phe$gn98h + phe$gn99h)/4
-tp <- (phe$tp97x + phe$tp98x + phe$tp98h + phe$tp99h)/4
-yd <- (phe$yd97x + phe$yd98x + phe$yd98h + phe$yd99h)/4
-kg <- (phe$kgw97x + phe$kgw98x + phe$kgw98h + phe$kgw99h)/4
+gn <- phe$gn
+tp <- phe$tp
+yd <- phe$yd
+kg <- phe$kgw
 
 
 phe1 <- cbind(yd, tp, gn, kg)
@@ -61,10 +61,10 @@ phed <- 0.5 * abs(phe.r11 - phe.r22)
 
 
 
-yield <- (phef$yield98 + phef$yield99)/2
-kgw <- (phef$kgw98 + phef$kgw99)/2
-grain <- (phef$grain98 + phef$grain99)/2
-tiller <- (phef$tiller98 + phef$tiller99)/2
+yield <- phef$yield
+kgw <- phef$kgw
+grain <- phef
+tiller <- phef$tiller
 phe12 <- cbind(yield, tiller, grain, kgw)
 
 
